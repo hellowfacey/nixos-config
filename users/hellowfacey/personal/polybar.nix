@@ -16,6 +16,7 @@
 
         modules-center = "date";
         modules-right = "xkeyboard";
+        modules-left = "xworkspaces";
       };
       "module/date" = {
         type = "internal/date";
@@ -27,6 +28,9 @@
       "module/xkeyboard" = {
         type = "internal/xkeyboard";
         interval = 5;
+      };
+      "module/xworkspaces" = {
+        type = "internal/xworkspaces";
       };
     };
   };
