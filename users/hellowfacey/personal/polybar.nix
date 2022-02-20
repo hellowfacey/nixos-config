@@ -5,9 +5,10 @@
 
   services.polybar = {
     enable = true;
-    script = ''
-      polybar main &
-    '';
+    script = "polybar main &";
+    package = pkgs.polybar.override {
+      i3GapsSupport = true;
+    };
     config = {
       "bar/main" = {
         monitor = "\${env:MONITOR:Virtual-1}";
@@ -16,7 +17,6 @@
 
         modules-center = "date";
         modules-right = "xkeyboard";
-        modules-left = "xworkspaces";
       };
       "module/date" = {
         type = "internal/date";
@@ -28,9 +28,6 @@
       "module/xkeyboard" = {
         type = "internal/xkeyboard";
         interval = 5;
-      };
-      "module/xworkspaces" = {
-        type = "internal/xworkspaces";
       };
     };
   };
