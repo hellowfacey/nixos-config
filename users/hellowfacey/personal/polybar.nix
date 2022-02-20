@@ -8,6 +8,7 @@
     script = "polybar main &";
     package = pkgs.polybar.override {
       i3GapsSupport = true;
+      pulseSupport = true;
     };
     config = {
       "bar/main" = {
@@ -17,6 +18,7 @@
 
         modules-center = "date";
         modules-right = "xkeyboard";
+        modules-left = "voice";
       };
       "module/date" = {
         type = "internal/date";
@@ -28,6 +30,9 @@
       "module/xkeyboard" = {
         type = "internal/xkeyboard";
         interval = 5;
+      };
+      "module/voice" = {
+        type = "internal/pulseaudio";
       };
     };
   };
